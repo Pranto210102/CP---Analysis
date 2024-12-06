@@ -78,6 +78,27 @@ int main() {
 // start indx  4
 // 4 4
 
+//easy version -----------------------------------------------
+void gcd_store(vector<ll> &nums, map<ll, vector<pair<ll, ll>>> &mp) {
+    ll n = nums.size();
+    map<ll, ll> fasiable;
+    for (ll i = n - 1; i >= 0; i--) {
+        map<ll, ll> new_fasiable;
+        for (auto v : fasiable) {
+            ll new_val = gcd(v.first, nums[i]);
+            new_fasiable[new_val] = max(new_fasiable[new_val], max(i, v.second));
+        }
+        new_fasiable[nums[i]] = max(new_fasiable[nums[i]], i);
+
+        for (auto v : new_fasiable) {
+            mp[i].push_back({v.first, v.second});
+        }
+
+        fasiable = new_fasiable;
+    }
+}
+
+
 
 
 
