@@ -15,3 +15,14 @@ https://codeforces.com/problemset/problem/816/B
 https://codeforces.com/contest/1903/problem/C
 
 
+--------------------Contibution Techniques------------------------
+
+https://leetcode.com/problems/sum-of-absolute-differences-in-a-sorted-array/description/
+
+https://atcoder.jp/contests/abc186/tasks/abc186_d
+
+https://leetcode.com/problems/count-unique-characters-of-all-substrings-of-a-given-string/description/
+
+https://leetcode.com/problems/total-appeal-of-a-string/description/
+
+
