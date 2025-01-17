@@ -26,3 +26,8 @@ https://leetcode.com/problems/count-unique-characters-of-all-substrings-of-a-giv
 https://leetcode.com/problems/total-appeal-of-a-string/description/
 
 
+
+-------------------ncr Problems -------------------------
+
+https://codeforces.com/problemset/problem/131/C
+
