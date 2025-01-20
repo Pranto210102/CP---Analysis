@@ -31,3 +31,8 @@ https://leetcode.com/problems/total-appeal-of-a-string/description/
 
 https://codeforces.com/problemset/problem/131/C
 
+https://codeforces.com/problemset/problem/584/B
+
+https://www.hackerrank.com/challenges/ncr-table/problem
+
+
