@@ -25,6 +25,8 @@ https://leetcode.com/problems/count-unique-characters-of-all-substrings-of-a-giv
 
 https://leetcode.com/problems/total-appeal-of-a-string/description/
 
+https://leetcode.com/problems/maximum-and-minimum-sums-of-at-most-size-k-subsequences/description/
+
 
 
 -------------------ncr Problems -------------------------
