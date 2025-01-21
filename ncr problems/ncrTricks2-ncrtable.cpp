@@ -12,3 +12,19 @@ void precomput() {
         }
     }
 }
+
+
+// another code ------------
+int mod=1e9+7;
+    int ncr[100001][71];
+    void precomput(int n){
+       
+        for(int i=0;i<=n;i++){
+            for(int j=0;j<=min(70,i);j++){
+               if(j==0)ncr[i][j]=1;
+               else {
+                  ncr[i][j] = (ncr[i-1][j-1] + ncr[i-1][j])%mod;
+               }
+            }
+        }
+    }
