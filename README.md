@@ -27,6 +27,10 @@ https://leetcode.com/problems/total-appeal-of-a-string/description/
 
 https://leetcode.com/problems/maximum-and-minimum-sums-of-at-most-size-k-subsequences/description/
 
++Number Theory--
+
+https://leetcode.com/problems/count-array-pairs-divisible-by-k/description/
+
 
 
 -------------------ncr Problems -------------------------
