@@ -58,7 +58,7 @@ https://cses.fi/problemset/task/2428/
 
 -------------------Binary Search----------------------
 
-BS on sublinear--
+BS on sublinear-----------
 
 https://www.geeksforgeeks.org/problems/index-of-first-1-in-a-sorted-array-of-0s-and-1s4048/1
 
@@ -69,7 +69,17 @@ https://maang.in/problems/Rotated-Sorted-Array-108?resourceUrl=cs85-cp500-pl3349
  https://leetcode.com/problems/peak-index-in-a-mountain-array/description/
 
      
-BS on Answer -
+BS on Answer --------
+
+https://codeforces.com/problemset/problem/165/B
+
+https://codeforces.com/problemset/problem/371/C
+
+https://codeforces.com/problemset/problem/780/B        // maintain line 
+
+https://atcoder.jp/contests/abc146/tasks/abc146_c
+
+https://atcoder.jp/contests/abc143/tasks/abc143_d
 
 * Sweep line :
         
