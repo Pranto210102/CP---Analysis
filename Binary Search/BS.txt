@@ -1,0 +1,3 @@
+BS on Answer -
+        * Sweep line :
+                 https://codeforces.com/problemset/problem/702/C
