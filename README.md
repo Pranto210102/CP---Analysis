@@ -57,16 +57,26 @@ https://cses.fi/problemset/task/2428/
 
 
 -------------------Binary Search----------------------
+
 BS on sublinear--
+
       https://www.geeksforgeeks.org/problems/index-of-first-1-in-a-sorted-array-of-0s-and-1s4048/1
+
       
      https://maang.in/problems/Rotated-Sorted-Array-108?resourceUrl=cs85-cp500-pl3349-rs108&returnUrl=%5B%22%2Fcourses%2FBinary-Search-85%3Ftab%3Dchapters%22%5D
+     
 
      https://leetcode.com/problems/peak-index-in-a-mountain-array/description/
+
+     
 BS on Answer -
+
         * Sweep line :
-                 https://codeforces.com/problemset/problem/702/C     
+        
+                 https://codeforces.com/problemset/problem/702/C 
+                 
         *K'th val : 
+        
                  https://codeforces.com/contest/448/problem/D
                  
    
