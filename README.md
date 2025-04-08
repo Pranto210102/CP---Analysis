@@ -89,5 +89,11 @@ https://atcoder.jp/contests/abc143/tasks/abc143_d
         
   https://codeforces.com/contest/448/problem/D
                  
+   ##DP---------
    
+   #Form -1 : 
+   
+   https://leetcode.com/problems/partition-equal-subset-sum/description/?envType=daily-question&envId=2025-04-07
+
+
    
