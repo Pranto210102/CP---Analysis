@@ -20,3 +20,10 @@ struct Fenwick {
         return s;
     }
 };
+// comparission idea
+set<ll> u_val(arr.begin(), arr.end());
+    map<ll,ll> compressed;
+    int idx = 1;
+    for(auto it : u_val){
+        compressed[it] = idx++;
+    }
