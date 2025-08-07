@@ -1,128 +1,94 @@
-#include<bits/stdc++.h>
-using namespace std;               // count odd even problem.....
+#include <bits/stdc++.h>
+using namespace std;
 using ll = long long;
+ ll n, q;
+vector<ll> a;
 
-struct Node {
-   int even, odd;
-};
-
-vector<Node> tree;
-vector<int> a;
-
-void build(int node, int start, int end) {
-    if(start == end) {
-        if(a[start] & 1) {
-            tree[node].odd = 1;
-            tree[node].even = 0;
-        }
-        else {
-            tree[node].odd = 0;
-            tree[node].even = 1;
-        }
-        return;
-    }
-
-    int mid = (start + end) / 2;
-    // left node 
-    build(2*node, start, mid);
-    // right node
-    build(2*node + 1, mid + 1, end);
-    
-    // merge
-    tree[node].even = tree[2 * node].even + tree[2 * node + 1].even;
-    tree[node].odd = tree[2 * node].odd + tree[2 * node + 1].odd;
-}
-
-void update(int node, int start, int end, int i, int x) {
-    if(start == end) {
-        // leaf node
-        a[i] = x;
-
-        if(a[i] & 1) {
-            tree[node].odd = 1;
-            tree[node].even = 0;
-        }
-        else {
-            tree[node].odd = 0;
-            tree[node].even = 1;
-        }
-        return;
-        
-    }
-    int mid = (start + end) / 2;
-
-    if(i <= mid) update(2 * node, start, mid, i, x);
-    else update(2 * node + 1, mid + 1, end, i, x);
-
-    tree[node].even = tree[2 * node].even + tree[2 * node + 1].even;
-    tree[node].odd = tree[2 * node].odd + tree[2 * node + 1].odd;
-}
-
-ll Odd_query(int node, int start, int end, int l, int r) {
-    if(start >= l && end <= r) {
-        return tree[node].odd;
-    }
-    if(start > r || end < l) {
-        return 0;
-    }
-
-    int mid = (start + end) / 2;
-
-    return Odd_query(2 * node, start, mid , l , r) +
-      Odd_query(2 * node + 1, mid + 1, end, l, r);
-}
-
-ll Even_query(int node, int start, int end, int l, int r) {
-    if(start >= l && end <= r) {
-        return tree[node].even;
-    }
-    if(start > r || end < l) {
-        return 0;
-    }
-
-    int mid = (start + end) / 2;
-
-    return Even_query(2 * node, start, mid , l , r) +
-      Even_query(2 * node + 1, mid + 1, end, l, r);
-}
-
-signed main () {
-     int n;
-     cin >> n;
-     a.resize(n);
-     tree.resize(4*n);
-
-     for(int i = 0; i < n; i++) cin >> a[i];
-
-     build(1, 0, n-1);
-
-     int q;
-     cin >> q;
-
-     while (q--) {
-        int t;
-        cin >> t;
-        if(t == 0) {
-            int i, x;
-            cin >> i >> x;
-            i--;
-
-            update(1, 0 , n-1, i, x);
-        }else if( t == 1){
-            int l , r;
-            cin >> l >> r;
-            l--;
-            r--;
-
-            cout << Even_query(1, 0, n-1, l, r) << "\n";
-        }else {
-            int l , r;
-            cin >> l >> r;
-            l--;
-            r--;
-
-            cout << Odd_query(1, 0, n-1, l, r) << "\n";
-        }
+struct node{
+     ll sum;
+     node(){
+        sum = 0;
      }
+};
+vector<node> tree;
+
+node merge(node &a, node &b) {
+    node ans;
+    ans.sum = (a.sum + b.sum);
+    return ans;
+}
+
+void build(ll id, ll l, ll r){
+     if(l == r) {
+        tree[id].sum = a[l];
+        return;
+     }
+
+     ll mid = (l + r) / 2;
+
+     build(2*id, l, mid);
+     build(2*id + 1, mid + 1, r);
+
+     tree[id] = merge(tree[2*id] , tree[2*id + 1]);
+}
+
+void update(ll id, ll l , ll r, ll pos, ll val){
+     if(pos < l || pos > r) return;
+
+     if(l == r) {
+        tree[id].sum = val;
+        a[l] = val;
+        return;
+     }
+
+    ll mid = (l + r) / 2;
+
+     update(2*id, l, mid, pos, val);
+     update(2*id + 1, mid + 1, r, pos, val);
+
+     tree[id] = merge(tree[2*id] , tree[2*id + 1]);
+}
+
+node query(ll id, ll l, ll r, ll lq, ll rq) {
+     if(lq > r || rq < l) return node();
+
+     if(lq <= l && rq >= r) return tree[id];
+
+     ll mid = (l + r) / 2;
+
+    node left =  query(2*id, l, mid, lq, rq);
+    node right =  query(2*id + 1, mid + 1, r, lq, rq);
+
+    return merge(left, right);
+}
+
+signed main() {
+    cin >> n >> q;
+    a.resize(n);
+    tree.resize(4*n);
+    for(ll i = 0; i < n; i++) cin >> a[i];
+
+    build(1, 0, n-1);
+
+    while(q--) {
+        ll t;
+        cin >> t;
+        if(t == 2) {
+            ll lq, rq;
+            cin >> lq >> rq;
+            lq--;
+            rq--;
+
+          node x =  query(1, 0, n-1, lq, rq);
+
+           cout << x.sum << "\n";
+        }else {
+            ll pos, val;
+            cin >> pos >> val;
+            pos--;
+
+            update(1, 0, n-1, pos, val);
+        }
+    }
 
 }
